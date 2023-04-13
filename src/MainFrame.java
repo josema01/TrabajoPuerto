@@ -23,11 +23,14 @@ public class MainFrame extends JFrame{
     private JTextArea tfMostrar_id;
     private JTextField tfBuscar_id;
     private JButton IdButton;
+    private JTextField tfBuscarPais;
+    private JButton calcularPaisButton;
+    private JTextField tfResultadoPais;
 
     public MainFrame(){
         setContentPane(mainPanel);
         setTitle("Bienvenido");
-        setSize(750,600);
+        setSize(850,600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
@@ -78,6 +81,13 @@ public class MainFrame extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 tfMostrar_id.setText((puerto.mostrar_por_id(Integer.parseInt(tfBuscar_id.getText()))));
+            }
+        });
+
+        calcularPaisButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tfResultadoPais.setText(Integer.toString(puerto.contador(tfBuscarPais.getText())));
             }
         });
     }

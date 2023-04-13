@@ -51,7 +51,12 @@ public class Contenedor {
     public String toString() {
         String s = new String();
         s += "ID: " + this.id + "\n";
-        //////Completar/////////////
+        s+= "Peso: " + this.peso + "\n";
+        s+= "Prioridad: " + this.prioridad + "\n";
+        s+= "Contenido: " + this.contenido + "\n";
+        s+= "Pais: " + this.pais + "\n";
+        s+= "Emisor: " + this.emisor + "\n";
+        s+= "Receptor: " + this.receptor + "\n";
         if (inspeccionado) s += "Esta inspeccionado\n";
         else s += "No esta inspeccionado\n";
         return s;
