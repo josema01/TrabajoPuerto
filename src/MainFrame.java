@@ -20,6 +20,9 @@ public class MainFrame extends JFrame{
     private JButton btnDesapilar;
     private JTextField tfColumna;
     private JTextField tfNhub;
+    private JTextArea tfMostrar_id;
+    private JTextField tfBuscar_id;
+    private JButton IdButton;
 
     public MainFrame(){
         setContentPane(mainPanel);
@@ -71,8 +74,14 @@ public class MainFrame extends JFrame{
 
             }
         });
+        IdButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                tfMostrar_id.setText((puerto.mostrar_por_id(Integer.parseInt(tfBuscar_id.getText()))));
+            }
+        });
     }
-    
+
     public static void main(String[] args) {
         MainFrame myFrame = new MainFrame();
 

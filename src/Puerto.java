@@ -81,22 +81,23 @@ public class Puerto {
         return c;
     }
 
-    public void mostrar_por_id(int id){
-        boolean esta = false;
-
+    public String mostrar_por_id(int id){
+        boolean control = false;
+        String s = new String();
         for (int k = 0; k < hubs.length; k++) {
             for (int i = 0; i < hubs[k].m.length; i++) {
                 for (int j = 0; j < hubs[k].m[i].length; j++) {
                     if (hubs[k].m[i][j] != null && hubs[k].m[i][j].getId() == id){
-                        System.out.println(hubs[k].m[i][j]);
-                        esta = true;
+                        s+=hubs[k].m[i][j].toString();
+                        control = true; //Hemos encontrado el contenedor
                     }
                 }
             }
         }
-        if (!esta){
-            System.out.println("El contenedor no está en el hub");
+        if (!control){
+            return "No se ha encontrado el contenedor";
         }
+        return s;
     }
 
 
