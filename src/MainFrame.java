@@ -1,4 +1,6 @@
 
+
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -39,6 +41,7 @@ public class MainFrame extends JFrame{
         btnApilar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 String content = tfContenido.getText();
                 int weight = Integer.parseInt(tfPeso.getText());
                 int priority = Integer.parseInt(tfPrioridad.getText());
@@ -50,6 +53,7 @@ public class MainFrame extends JFrame{
                 Contenedor c = new Contenedor(ident,weight,priority,content,nation,em,re);
                 puerto.apilar(c);
                 tfResultado.setText(puerto.mostrar_puerto());
+
 
             }
         });
@@ -94,9 +98,6 @@ public class MainFrame extends JFrame{
 
     public static void main(String[] args) {
         MainFrame myFrame = new MainFrame();
-
-
-
    }
 
 
