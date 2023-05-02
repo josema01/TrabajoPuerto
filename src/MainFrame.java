@@ -4,9 +4,11 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 
 
-public class MainFrame extends JFrame{
+public class MainFrame extends JFrame {
     private JTextField tfPeso;
     private JButton btnApilar;
     private JButton btnClear;
@@ -29,6 +31,11 @@ public class MainFrame extends JFrame{
     private JButton calcularPaisButton;
     private JTextField tfResultadoPais;
 
+    private FileInputStream fis;
+    private ObjectInputStream entrada;
+    private Puerto puerto;
+
+
     public MainFrame(){
         setContentPane(mainPanel);
         setTitle("Bienvenido");
@@ -36,7 +43,8 @@ public class MainFrame extends JFrame{
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
 
-        Puerto puerto = new Puerto();
+
+        puerto = new Puerto();
 
         btnApilar.addActionListener(new ActionListener() {
             @Override
